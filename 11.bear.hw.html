@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bear</title>
+    <style>
+        .head {
+            background: #000;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: auto;
+        }
+
+        .head::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: red;
+            top: 50%;
+            transform: translate(-20%, -50%);
+        }
+
+        .head::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: red;
+            top: 50%;
+            right: 0%;
+            transform: translate(20%, -50%);
+        }
+
+        .ear_outside::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: black;
+            left: 40px;
+        }
+
+        .ear_outside::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: black;
+            right: 40px;
+        }
+
+        .ear_inside::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            left: 55px;
+            top: 15px;
+        }
+
+        .ear_inside::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            right: 55px;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .face_middle {
+            position: absolute;
+            width: 220px;
+            height: 160px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            margin: auto;
+        }
+
+        .face_middle::before {
+            content: "";
+            position: absolute;
+            background: #000;
+            border-radius: 50%;
+            width: 70px;
+            height: 40px;
+            left: 50%;
+            transform: translate(-50%, 30%)
+        }
+
+        .face_middle::after {
+            content: "";
+            position: absolute;
+            background: #000;
+            border-radius: 50%;
+            width: 150px;
+            height: 60px;
+            left: 50%;
+            bottom: 15%;
+            transform: translate(-50%)
+        }
+
+        .eye_outside::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            top: -50%;
+            left: -20%;
+            transform: translateY(-20%)
+        }
+
+        .eye_outside::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            top: -50%;
+            right: -20%;
+            transform: translateY(-20%)
+        }
+
+        .eye_inside::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: black;
+            top: -90px;
+            left: -35px;
+        }
+
+        .eye_inside::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: black;
+            top: -90px;
+            right: -35px;
+            z-index: 1;
+        }
+
+        .box:before {
+            content: "";
+            position: absolute;
+            transform: skewX(45deg);
+            transform-origin: center center;
+            background: white;
+            width: 80px;
+            height: 80px;
+            bottom: 30px;
+            left: 32%;
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            transform: skewX(135deg);
+            transform-origin: center center;
+            background: white;
+            width: 80px;
+            height: 80px;
+            bottom: 30px;
+            right: 32%;
+        }
+
+        /* 熊閉眼 */
+        .head:hover .eye_outside::before,
+        .head:hover .eye_outside::after {
+            transform: scaleY(0.01);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="ear_outside">
+            <div class="ear_inside"></div>
+        </div>
+        <div class="face_middle">
+            <div class="eye_outside">
+                <div class="eye_inside"></div>
+            </div>
+        </div>
+        <div class="box"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 600px;
+      height: 150px;
+      border: 1px solid #000;
+      position: absolute;
+      background-color: #f8fbff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: linear-gradient(90deg, transparent 90%, black 90%);
+      background-repeat: repeat-x;
+      background-size: 15px 20px;
+    }
+
+    h2 {
+      position: absolute;
+      bottom: -20px;
+      font-weight: normal;
+      color: gray;
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      background: #000;
+      width: 60px;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    .box::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(241, 241, 116, 0.6);
+      width: 270px;
+      height: 100%;
+      right: 0;
+    }
+
+    .box2::before {
+      content: "";
+      position: absolute;
+      border: 1px solid #000;
+      background-color: #f8fbff;
+      width: 60px;
+      height: 100px;
+      left: -62px;
+      top: 25px;
+    }
+
+    .box2::after {
+      content: "";
+      position: absolute;
+      border: 1px solid #000;
+      background-color: #f8fbff;
+      width: 60px;
+      height: 100px;
+      right: -62px;
+      top: 25px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .box3::before {
+      content: "";
+      position: absolute;
+      border: 1px solid #000;
+      height: 100%;
+      width: 50px;
+      left: -113px;
+      background-color: #f8fbff;
+      border-radius: 10px;
+    }
+
+    .box3::after {
+      content: "";
+      position: absolute;
+      border-top: 2px solid #000;
+      width: 150px;
+      height: 1px;
+      top: 50%;
+      right: -35%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h2>Made in Taiwan</h2>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
+</body>
+
+</html>
